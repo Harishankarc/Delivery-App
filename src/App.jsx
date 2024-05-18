@@ -30,6 +30,7 @@ function Main() {
         <Route path="*" element={<Error />} />
         <Route path="/login" element={<Login setIsAuthorized={ setIsAuthorized }/>} />
       </Routes>
+      
     </>
   );
 }
