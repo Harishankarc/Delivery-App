@@ -1,0 +1,14 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Nova, Helvetica, sans-serif;
+  overflow-x: hidden;
+
+}
+a{
+  text-decoration: none;
+}
+@font-face {
+  font-family: Nova;
+  src: url('../src/assets/font/proxima-nova-2/Mark\ Simonson\ \ Proxima\ Nova\ Regular.otf');
+}
