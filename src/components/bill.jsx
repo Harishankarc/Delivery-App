@@ -1,4 +1,9 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Bill(){
+    function HandleOnClick(){
+        toast('This feature is not available now')
+    }
     return (
         <div className="bill">
             <h3>Your Balance</h3>
@@ -6,8 +11,10 @@ function Bill(){
                 <h4>Balance</h4>
                 <h1>0000 Rs</h1>
                 <div className="buttons">
-                    <button className="btn1">TopUp</button>
-                    <button className="btn1">Transfer</button>
+                    <button className="btn1" onClick={HandleOnClick}>TopUp</button>
+                    <ToastContainer />
+                    <button className="btn1" onClick={HandleOnClick}>Transfer</button>
+                    <ToastContainer />
                 </div>
             </div>
                 <p className="address">Your address</p>

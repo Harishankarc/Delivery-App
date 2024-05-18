@@ -7,7 +7,7 @@ import foodData from '../data/food'
 import PropTypes from 'prop-types';
 
 
-function Navbar({ isauthorized }){
+function Navbar({ isautorized }){
 
     const [items,setItems] = useState('')
     const foodItems = foodData;
@@ -49,7 +49,7 @@ function Navbar({ isauthorized }){
                 </div>
             <div className="profile login">
                 
-                    { isauthorized ? (<>
+                    { isautorized ? (<>
                         <Link to="/profile">
                             <img src={profile} alt="profile" />
                             <h3>Profile</h3>
@@ -66,7 +66,7 @@ function Navbar({ isauthorized }){
     );
 }
 Navbar.propTypes={
-    isauthorized: PropTypes.bool.isRequired
+    isautorized: PropTypes.bool.isRequired
 }
 
 export default Navbar;
