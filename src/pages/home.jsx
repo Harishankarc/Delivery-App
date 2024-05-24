@@ -6,11 +6,15 @@ import Bill from '../components/bill'
 function Home(){
     return (
         <>
-            <DashBoard />
+            <div className='dashforbig'>
+                <DashBoard />
+            </div>
             <Banner />
             <Category />
-            <Category />
-            <Bill />
+            <div className='bill-cover'>
+                <Bill />
+            </div>
+            
         </>
     );
 }

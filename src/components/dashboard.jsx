@@ -1,15 +1,18 @@
 // import dashboard from '../assets/layout-dashboard.svg'
 import { Link } from 'react-router-dom';
-function DashBoard(){
-
+import PropTypes from 'prop-types'
+function DashBoard(props){
+    function HandleLinkClick(){
+        props.onClose();
+    }
     return (
         <>
             <div className="Dashboard"  id="1">
             <h3>Dashboard</h3>
             <ul className="items">
-                <li>Dashboard Light</li>
+                <Link to="/profile" onClick={HandleLinkClick}><li>Profile</li></Link>
                 <li>Dashboard Dark</li>
-                <li>Food Order</li>
+                <li>Food Order</li> 
                 <li>Favorate Food</li>
                 <a href="mailto:charishankar30@gmail.com"><li>Message</li></a>
                 <Link to="/profile"><li>Order History</li></Link>
@@ -32,5 +35,8 @@ function DashBoard(){
         </>
         
     );
+}
+DashBoard.propTypes = {
+    onClose : PropTypes.func.isRequired
 }
 export default DashBoard;

@@ -12,6 +12,10 @@ function Category(){
             </div>
             <div className='cat-items'>
                 <div className='items-c'>
+                    <img src={pizza} alt="Pizza" />
+                    <h3>Pizza</h3>
+                </div>
+                <div className='items-c'>
                     <img src={beverage} alt="Beverage" />
                     <h3>Beverage</h3>
                 </div>
@@ -27,10 +31,7 @@ function Category(){
                     <img src={chicken} alt="Chicken" />
                     <h3>Chicken</h3>
                 </div>
-                <div className='items-c'>
-                    <img src={pizza} alt="Pizza" />
-                    <h3>Pizza</h3>
-                </div>
+                
             </div>
         </div>
     );

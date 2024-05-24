@@ -8,6 +8,7 @@ import Profile from './pages/profile'
 import Login from './pages/login'
 import Signup from './pages/signin'
 import OtpVerify from './pages/otpVerify'
+import Products from './pages/products'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react'
 
@@ -34,7 +35,7 @@ function Main() {
         <Route path="/login" element={<Login setIsAuthorized={ setIsAuthorized } isautorized = {isautorized}/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/twostepverification" element={<OtpVerify setIsAuthorized={ setIsAuthorized } isautorized = {isautorized}/>} />
-
+        <Route path="/products" element={<Products />} />
       </Routes>
 
     </>

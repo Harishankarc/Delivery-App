@@ -1,18 +1,46 @@
+import { useState } from 'react';
 import foodImage from '../assets/food.avif'
-function recentOrders(){
+import x from '../assets/x.svg'
+
+function RecentOrders(){
+    const [close,setClose] = useState(true);
+    const [name,setName] = useState('HARISHANKAR')
+    const [email,setEmail] = useState('charishankar30@gmail.com')
+    const [phoneNumber,setPhoneNumber] = useState('8129348052')
+    function HandleCloseOnClick(){
+        setClose(!close)
+    }
+    function HandleButtonOnClick(){
+        setClose(false)
+    }
+    function HandleEditOnClick(){
+        setName(name)
+        setEmail(email)
+        setPhoneNumber(phoneNumber)
+        HandleCloseOnClick()
+    }
+    function HandleNameOnChange(value){
+        setName(value)
+    }
+    function HandleEmailOnChange(value){
+        setEmail(value)
+    }
+    function HandlePhoneNumberOnChange(value){
+        setPhoneNumber(value)
+    }
     return (
         <>
             <div className="details">
                 <div className="details-text">
-                    <h1>HARISHANKAR</h1>
+                    <h1>{name}</h1>
                     <div className="phone-email">
-                        <h3>8129348052</h3>
-                        <h3>charishankar30@gmail.com</h3>
+                        <h3>{phoneNumber}</h3>
+                        <h3>{email}</h3>
                         
                     </div>
                 </div>
                 <div className="details-btn">
-                    <button>EDIT PROFILE</button>
+                    <button onClick={HandleButtonOnClick}>EDIT PROFILE</button>
                 </div>
             </div>
             <div className="past-orders">
@@ -45,8 +73,31 @@ function recentOrders(){
                     </div>
                 </div>                
             </div>
+            {
+                close ? 
+                    null
+                        :
+                    <div className='change-profile'>
+                        <div className='change-profile-text'>
+                            <img src={x} alt="" onClick={HandleCloseOnClick}/>
+                            <h2>Edit Profile</h2>
+                            
+                        </div>
+                        <div className='change-profile-input-box'>
+                            <h4>Name</h4>
+                            <input type="text" value={name} onChange={(event)=>HandleNameOnChange(event.target.value)}/>
+                            <h4>Email</h4>
+                            <input type="text" value={email} onChange={(event)=>HandleEmailOnChange(event.target.value)}/>
+                            <h4>PhoneNumber</h4>
+                            <input type="text" value={phoneNumber} onChange={(event)=>HandlePhoneNumberOnChange(event.target.value)}/>
+                            <button onClick={HandleEditOnClick}>Edit</button>
+                        </div>
+                    </div>
+            }
+        
+            
 
         </>
     );
 }
-export default recentOrders;
+export default RecentOrders;
