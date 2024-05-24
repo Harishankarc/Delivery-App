@@ -759,6 +759,7 @@ form input[type="text"]{
     position: relative;
     width: 100%;
     right: 0;
+    margin-bottom: 20px;
   }
   .banner {
     width: 100%;
@@ -820,5 +821,46 @@ form input[type="text"]{
   }
   .Login{
     padding: 20px;
+  }
+  .details{
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .details-text{
+    text-align: center;
+  }
+  .profile-div{
+    padding: 20px;
+    padding-top: 60px;
+  }
+  .shop-details-image img{
+    display: none;
+  }
+  .past-order-details{
+    padding: 10px;
+  }
+  .past-orders{
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .order-status{
+    display: none;
+  }
+  .shop-details{
+    margin: 0;
+  }
+  .shop-details-text h3{
+    font-size: 20px;
+  }
+  .shop-details-text p{
+    font-size: 15px;
+  }
+  .change-profile{
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    top: 16.2%;
+
   }
 }

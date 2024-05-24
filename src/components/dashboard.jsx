@@ -12,7 +12,7 @@ function DashBoard(props){
             <ul className="items">
                 <Link to="/profile" onClick={HandleLinkClick}><li>Profile</li></Link>
                 <li>Dashboard Dark</li>
-                <li>Food Order</li> 
+                <Link to="/products" onClick={HandleLinkClick}><li>Food Order</li></Link>
                 <li>Favorate Food</li>
                 <a href="mailto:charishankar30@gmail.com"><li>Message</li></a>
                 <Link to="/profile"><li>Order History</li></Link>
