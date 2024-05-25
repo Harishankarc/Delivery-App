@@ -680,7 +680,7 @@ form input[type="text"]{
   box-shadow: -10px 10px 30px grey;
   transition: 0.3s ease-in-out;
   &:hover{
-    scale: 1.01;
+    scale: 1;
   }
 }
 .product-card img{
@@ -724,7 +724,102 @@ form input[type="text"]{
   font-size: 1rem;
   color: #282c3f;
 }
-
+.gallery{
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.img-w{
+  flex: 1 1 calc(25% - 10px);
+  height: 400px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.image-text{
+  position: absolute;
+  right: 14%;
+  top: 36%;
+  z-index: 10;
+  color: white;
+}
+.img-w div{
+  height: 400px;
+  overflow: hidden;
+}
+.img-w img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.gallery :nth-child(4) img{
+  filter: blur(2px);
+}
+.singleProduct-title{
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.singleProduct-details{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.singleProduct-details p{
+  margin-top: 10px;
+  color: #282c3f;
+}
+.singleProduct-details p span {
+  color: orange;
+}
+.singleProduct-rating, .rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating img{
+  width: 25px;
+  margin: 10px;
+}
+.singleProduct-buttons{
+  margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+}
+.singleProduct-buttons button{
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  font-weight: bold;
+  color: black;
+  border: 1px solid darkorange;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+.singleProduct-buttons button div {
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+.singleProduct-buttons button div p{
+  margin: 0;
+}
+.singleProduct-buttons button div img{
+  margin-right: 10px;
+}
+.productCard{
+  border: 0.5px solid #282c3f;
+  border-radius: 10px;
+}
+.productCard:hover{
+  scale: 0px;
+}
 @media screen and (max-width:600px){
   .navbar{
     height: 70px;
@@ -862,5 +957,30 @@ form input[type="text"]{
     position: absolute;
     top: 16.2%;
 
+  }
+  .gallery{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .image-text{
+    display: none;
+  }
+  .img4w, .img3w{
+    display: none;
+  }
+  .singleProduct-title{
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+  }
+  .singleProduct-rating{
+    flex-direction: column;
+  }
+  .singleProduct-details{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .sp-btn1{
+    overflow: hidden;
   }
 }

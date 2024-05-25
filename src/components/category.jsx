@@ -3,12 +3,14 @@ import burger from '../assets/icons8-burger-96.png'
 import soup from '../assets/icons8-miso-soup-96.png'
 import chicken from '../assets/icons8-real-food-for-meals-96.png'
 import pizza from '../assets/icons8-pizza-96.png'
+import { Link } from 'react-router-dom';
+
 function Category(){
     return (
         <div className="category">
             <div className="title">
                 <h3>Category</h3>
-                <h4>view all</h4>
+                <Link to="/products"><h4>view all</h4></Link>
             </div>
             <div className='cat-items'>
                 <div className='items-c'>

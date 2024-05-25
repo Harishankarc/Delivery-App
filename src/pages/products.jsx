@@ -1,12 +1,20 @@
 import ProductCard from '../components/productCard'
-function Products(){
+import { Link } from 'react-router-dom';
+import foodData from '../data/food';
+import PropTypes from 'prop-types'
+
+function Products({setIndex}){
     return (
         <div className='products'>
             {
-                Array.from({length:10},(key)=> <ProductCard key={key}/>)
+                foodData.map((item,index)=>{
+                    return <Link to="/singleproduct"  key={index} onClick={()=>setIndex(index)}><ProductCard name={item}/></Link>
+                })
             }
         </div>
     );
 }
-
+Products.propTypes ={
+    setIndex:PropTypes.func.isRequired
+}
 export default Products;
