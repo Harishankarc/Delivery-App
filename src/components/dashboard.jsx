@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 function DashBoard(props){
     function HandleLinkClick(){
         props.onClose();
+
     }
     return (
         <>
@@ -11,9 +12,9 @@ function DashBoard(props){
             <h3>Dashboard</h3>
             <ul className="items">
                 <Link to="/profile" onClick={HandleLinkClick}><li>Profile</li></Link>
-                <li>Dashboard Dark</li>
-                <Link to="/products" onClick={HandleLinkClick}><li>Food Order</li></Link>
-                <li>Favorate Food</li>
+                <li>Cart</li>
+                <Link to="/products" onClick={()=>{HandleLinkClick;props.setSearch('')}}><li>Order</li></Link>
+                <li>Favorate</li>
                 <a href="mailto:charishankar30@gmail.com" onClick={HandleLinkClick}><li>Message</li></a>
                 <Link to="/profile" onClick={HandleLinkClick}><li>Order History</li></Link>
                 <li>Notification</li>
@@ -37,6 +38,7 @@ function DashBoard(props){
     );
 }
 DashBoard.propTypes = {
-    onClose : PropTypes.func.isRequired
+    onClose : PropTypes.func.isRequired,
+    setSearch:PropTypes.func.isRequired
 }
 export default DashBoard;

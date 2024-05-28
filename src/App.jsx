@@ -27,19 +27,20 @@ function Main() {
   const [isautorized,setIsAuthorized] = useState(false)
   const [index,setIndex] = useState()
   const [fav,setFav] = useState([])
+  const [search,setSearch] = useState('')
 
 
   return (
     <>
-      {!hideNavbar && <Navbar isautorized={ isautorized } />}
+      {!hideNavbar && <Navbar isautorized={ isautorized } setSearch={setSearch}/>}
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home setSearch={setSearch}/>} />
         { isautorized ? <Route path="/profile" element={<Profile />} /> : <Route path= '*' element={<Error />} />}
         <Route path="*" element={<Error />} />
         <Route path="/login" element={<Login setIsAuthorized={ setIsAuthorized } isautorized = {isautorized}/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/twostepverification" element={<OtpVerify setIsAuthorized={ setIsAuthorized } isautorized = {isautorized}/>} />
-        <Route path="/products" element={<Products setIndex={setIndex}/>} />
+        <Route path="/products" element={<Products setIndex={setIndex} search={search}/>} />
         <Route path="/singleproduct" element={<SingleProduct isautorized = {isautorized} index = {index} setFav={setFav}/>} />
       </Routes>
 

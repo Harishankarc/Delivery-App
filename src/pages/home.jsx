@@ -2,15 +2,16 @@ import DashBoard from '../components/dashboard'
 import Banner from '../components/banner'
 import Category from '../components/category'
 import Bill from '../components/bill'
+import PropTypes from 'prop-types'
 
-function Home(){
+function Home({setSearch}){
     return (
         <>
             <div className='dashforbig'>
-                <DashBoard />
+                <DashBoard setSearch={setSearch}/>
             </div>
             <Banner />
-            <Category />
+            <Category setSearch={setSearch}/>
             <div className='bill-cover'>
                 <Bill />
             </div>
@@ -18,5 +19,7 @@ function Home(){
         </>
     );
 }
-
+Home.propTypes ={
+    setSearch: PropTypes.func.isRequired
+}
 export default Home

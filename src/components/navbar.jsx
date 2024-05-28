@@ -8,9 +8,12 @@ import login from '../assets/log-in.svg'
 import foodData from '../data/food'
 import PropTypes from 'prop-types';
 import DashBoard from './dashboard';
+import { useNavigate } from 'react-router-dom';
 
-function Navbar({ isautorized }){
+function Navbar({ isautorized,setSearch }){
 
+    const navigate = useNavigate()
+    
     const [items,setItems] = useState('')
     const [isOpen,setIsOpen] = useState(false)
     const foodItems = foodData;
@@ -19,7 +22,9 @@ function Navbar({ isautorized }){
     }
     function HandleOnClick(item){
         setItems(item)
-
+        setSearch(item)
+        navigate('/products')
+        setItems('')
     }   
     function HandleMenuOnClick(){
         setIsOpen(!isOpen)
@@ -112,7 +117,8 @@ function Navbar({ isautorized }){
     );
 }
 Navbar.propTypes={
-    isautorized: PropTypes.bool.isRequired
+    isautorized: PropTypes.bool.isRequired,
+    setSearch: PropTypes.func.isRequired
 }
 
 export default Navbar;
