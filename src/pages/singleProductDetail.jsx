@@ -13,6 +13,23 @@ import { useState } from 'react'
 
 function SingleProduct({isautorized , index, setFav}){
     const [isFav,setIsFav] = useState(false)
+    async function HandleShareOnClick(){
+        if(navigator.share){
+            try {
+            await navigator.share({
+                title:'Indian Pizza Hut',
+                text:'Check out this products',
+                url:'https://indianpizzahut.netlify.app/singleproduct'
+
+            }) 
+            console.log('Successfully shared')
+            } catch (error) {
+                console.log("Error sharing: ",error)
+            }
+        }else{
+            console.log('Webshare is not supported in your browser')
+        }
+    }
     return (
         <>
             <div className="gallery">
@@ -61,7 +78,7 @@ function SingleProduct({isautorized , index, setFav}){
                         </div>
                     </button>
                     }
-                    <button className='sp-btn3'>
+                    <button className='sp-btn3' onClick={HandleShareOnClick}>
                         <div>
                             <img src={forward} alt="" />
                             <p>Share</p>

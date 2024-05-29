@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 function DashBoard(props){
     function HandleLinkClick(){
-        props.onClose();
+        props.onClose()
 
+    }
+    function HandleLinkOrderClick(){
+        props.setSearch('')
     }
     return (
         <>
@@ -13,7 +16,7 @@ function DashBoard(props){
             <ul className="items">
                 <Link to="/profile" onClick={HandleLinkClick}><li>Profile</li></Link>
                 <li>Cart</li>
-                <Link to="/products" onClick={()=>{HandleLinkClick;props.setSearch('')}}><li>Order</li></Link>
+                <Link to="/products" onClick={HandleLinkOrderClick}><li>Order</li></Link>
                 <li>Favorate</li>
                 <a href="mailto:charishankar30@gmail.com" onClick={HandleLinkClick}><li>Message</li></a>
                 <Link to="/profile" onClick={HandleLinkClick}><li>Order History</li></Link>
