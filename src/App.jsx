@@ -10,6 +10,7 @@ import Signup from './pages/signin'
 import OtpVerify from './pages/otpVerify'
 import Products from './pages/products'
 import SingleProduct from './pages/singleProductDetail'
+import Cart from './pages/cart'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react'
 
@@ -42,6 +43,7 @@ function Main() {
         <Route path="/twostepverification" element={<OtpVerify setIsAuthorized={ setIsAuthorized } isautorized = {isautorized}/>} />
         <Route path="/products" element={<Products setIndex={setIndex} search={search}/>} />
         <Route path="/singleproduct" element={<SingleProduct isautorized = {isautorized} index = {index} setFav={setFav}/>} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
 
     </>

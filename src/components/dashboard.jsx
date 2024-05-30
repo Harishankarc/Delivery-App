@@ -15,7 +15,7 @@ function DashBoard(props){
             <h3>Dashboard</h3>
             <ul className="items">
                 <Link to="/profile" onClick={HandleLinkClick}><li>Profile</li></Link>
-                <li>Cart</li>
+                <Link to='/cart'><li>Cart</li></Link>
                 <Link to="/products" onClick={HandleLinkOrderClick}><li>Order</li></Link>
                 <li>Favorate</li>
                 <a href="mailto:charishankar30@gmail.com" onClick={HandleLinkClick}><li>Message</li></a>
